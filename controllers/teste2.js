@@ -1,17 +1,31 @@
-var data =  require("../database/fakeData");
+const data = require("../database/fakeData");
 
-module.exports = function(req, res){
-  
-    var name =  req.body.name;
-    var jov =  req.body.job;
-    
-    var newUser = {
-        name: name,
-        job: job,
+const createUser = (req, res) => {
+    try {
+        const {name, job} = req.body;
+
+        if(!name || !job) {
+            return res.status(401).send('é necessario informar todos os campos para efetuar o cadastro');
+        }
+
+        const user = data.find((user) => user.name === name);
+
+        if(user){
+            return res.status(401).send('Este usuario já está cadastrado no sistema');
+        }
+
+        const index = data.length - 1;
+        const newUser = {
+            id: data[index].id + 1,
+            name: name,
+            job: job
+        };
+
+        data.push(newUser);
+
+        return res.status(201).json(newUser);
+    } catch (error) {
+        return res.status(500).json({error: error});
     }
-
-    data.push(newUser)
-    
-    res.send(newUser);
-
 };
+module.exports = createUser;
