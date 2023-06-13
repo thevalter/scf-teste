@@ -1,7 +1,13 @@
 
-
 # Este é um teste para desenvolvedores
 
+## Teste realizado de forma simples e objetiva
+
+## Para rodar a aplicação, basta instalar as dependências e executar o comando "npm run dev"
+
+## Caso queira testar as rotas no postman:
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/26682460-6ed9f2da-8d03-46a9-a372-d056ac7e0ca3?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D26682460-6ed9f2da-8d03-46a9-a372-d056ac7e0ca3%26entityType%3Dcollection%26workspaceId%3Decf3ff00-f55e-49b0-b8f7-7e1d2addd718)
 # possui 5 testes
 
 ## Introdução
