@@ -2,6 +2,7 @@ const {Router} = require('express');
 const {getUser, getAllUsers} = require('./controllers/teste1');
 const createUser = require('./controllers/teste2');
 const deleteUser = require('./controllers/teste3');
+const updateUser = require('./controllers/teste4');
 
 const routes = Router();
 
@@ -18,7 +19,7 @@ routes.get('/', function(req, res){
   routes.get("/users", getAllUsers);
   routes.post("/users", createUser);
   routes.delete("/users", deleteUser);
-//   routes.put("/users", teste4)
+  routes.put("/users", updateUser)
 //   routes.get("/users/access", teste5);
   
  module.exports = routes
