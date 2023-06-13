@@ -4,6 +4,8 @@ const createUser = require('./controllers/teste2');
 const deleteUser = require('./controllers/teste3');
 const updateUser = require('./controllers/teste4');
 const readingCount = require('./controllers/teste5');
+const userLogin = require('./controllers/teste6');
+const authMiddleware = require('./middlewares/auth');
 
 const routes = Router();
 
@@ -16,11 +18,12 @@ routes.get('/', function(req, res){
     `);
   });
   
+  routes.post('/login', userLogin)
   routes.get("/user", getUser);
   routes.get("/users", getAllUsers);
   routes.post("/users", createUser);
-  routes.delete("/users", deleteUser);
-  routes.put("/users", updateUser)
+  routes.delete("/users", authMiddleware, deleteUser);
+  routes.put("/users", authMiddleware, updateUser)
   routes.get("/users/access", readingCount);
   
  module.exports = routes

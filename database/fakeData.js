@@ -5,6 +5,14 @@ const fakeData  =  [
         name: "João Oliveira",
         job: "Desenvolvedor",
         read: 0,
+        role: "adm"
+    },
+    {
+        id: 2,
+        name: "Valter Nunes",
+        job: "Desenvolvedor",
+        read: 0,
+        role: "client"
     }
 ]
 
