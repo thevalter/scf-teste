@@ -3,6 +3,7 @@ const {getUser, getAllUsers} = require('./controllers/teste1');
 const createUser = require('./controllers/teste2');
 const deleteUser = require('./controllers/teste3');
 const updateUser = require('./controllers/teste4');
+const readingCount = require('./controllers/teste5');
 
 const routes = Router();
 
@@ -20,6 +21,6 @@ routes.get('/', function(req, res){
   routes.post("/users", createUser);
   routes.delete("/users", deleteUser);
   routes.put("/users", updateUser)
-//   routes.get("/users/access", teste5);
+  routes.get("/users/access", readingCount);
   
  module.exports = routes

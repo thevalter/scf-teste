@@ -18,7 +18,8 @@ const createUser = (req, res) => {
         const newUser = {
             id: data[index].id + 1,
             name: name,
-            job: job
+            job: job,
+            read: 0
         };
 
         data.push(newUser);

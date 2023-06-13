@@ -1,6 +1,6 @@
 const data = require("../database/fakeData");
 
-const updateUser = (req, res, next) => {
+const updateUser = (req, res) => {
     const { id } = req.query;
     let user = data.find(item => item.id == id);
 
